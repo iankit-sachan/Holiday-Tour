@@ -1,0 +1,142 @@
+:root{
+  --muted:#6c757d;
+  --accent:#c64d43; /* red-ish CTA in screenshot */
+  --card-radius:14px;
+  --max-width:1200px;
+}
+
+/* Global */
+*{box-sizing:border-box}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#222;
+  background:linear-gradient(90deg, rgba(232,246,249,1) 0%, rgba(245,249,250,1) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Logo + nav */
+.display-logo{
+  font-family: "Playfair Display", serif;
+  font-weight:700;
+  letter-spacing:0.2px;
+  color:#111;
+  font-size:1.2rem;
+}
+
+/* CTA button */
+.btn-cta{
+  background:var(--accent);
+  color:#fff;
+  border-radius:8px;
+  padding:0.5rem 0.95rem;
+  border:none;
+  box-shadow: 0 6px 18px rgba(198,77,67,0.12);
+}
+.btn-cta:hover{opacity:0.95}
+
+/* HERO */
+
+.hero-logo-img {
+    height: 60px;          /* controls size */
+    width: 60px;           /* must match height */
+    border-radius: 50%;    /* makes it a perfect circle */
+    object-fit: cover;     /* crops inside circle */
+    object-position: center;
+    display: block;
+}
+.hero-logo {
+    z-index: 10;           /* keep above overlay */
+}
+
+
+.hero{
+  position:relative;
+  height:520px;
+  overflow:hidden;
+  border-bottom-left-radius:32px;
+  border-bottom-right-radius:8px;
+  margin-bottom:40px;
+}
+.hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.06);
+  filter:contrast(0.95) saturate(0.95);
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(8,12,25,0.72) 0%, rgba(8,12,25,0.36) 50%, rgba(255,255,255,0.05) 100%);
+}
+.hero-content{
+  position:relative;
+  z-index:3;
+  padding-top:70px;
+  padding-bottom:70px;
+}
+.hero-title{
+  font-family:"Playfair Display", serif;
+  color:#fff;
+  font-size:48px;
+  line-height:1.05;
+  font-weight:800;
+  margin:0;
+  text-shadow:0 6px 30px rgba(0,0,0,0.35);
+}
+.hero-sub{
+  color:rgba(255,255,255,0.85);
+  max-width:520px;
+}
+
+
+/* Sections */
+.section-title{
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  font-size:28px;
+  margin-bottom:0.75rem;
+}
+
+/* Cards */
+.card{
+  border-radius:var(--card-radius);
+  overflow:hidden;
+  border:none;
+  box-shadow: 0 6px 24px rgba(20,30,40,0.05);
+}
+.location-card img,
+.offer-card img{
+  height:200px;
+  width:100%;
+  object-fit:cover;
+}
+
+/* Offer cards smaller text */
+.offer-card .card-body{
+  padding:0.85rem 1rem;
+}
+
+/* Blog feature */
+.blog-feature img{height:220px; object-fit:cover;}
+
+/* Footer */
+.footer{
+  border-top-left-radius:18px;
+  border-top-right-radius:18px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px){
+  .hero{height:420px}
+  .hero-title{font-size:36px}
+}
+@media (max-width: 575px){
+  .hero{height:360px}
+  .hero-title{font-size:30px}
+  .hero-sub{font-size:14px}
+  .location-card img{height:160px}
+}
